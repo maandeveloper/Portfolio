@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "poppins", sans-serif;
+  list-style: none;
 }
 
 body {
@@ -34,7 +35,7 @@ body {
   animation: slideRight 1s ease forwards;
 }
 
-.navbar a {
+.navbar ul li{
   display: inline-block;
   font-size: 25px;
   color: #fff;
@@ -46,8 +47,58 @@ body {
   animation: slideTop 0.5s ease forwards;
   animation-delay: calc(0.2 * var(--i));
 }
+.navbar ul li a{
+  text-decoration: none;
+  color: #fff;
+}
+
 .navbar a:hover {
   color: #0ef;
+}
+
+.checkbtn{
+  font-size: 30px;
+  color: #fff;
+  float: right;
+  line-height: 80px;
+  margin-right: 40px;
+  cursor: pointer;
+  display: none;
+}
+
+#check{
+  display: none ;
+}
+
+@media(max-width: 858px){
+  .checkbtn{
+    display: block;
+  }
+  ul{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #001b29;
+    top: 80px;
+    left: -100%;
+    text-align: center;
+    transition: all .5s;
+  }
+  .navbar ul li{
+    display: block;
+    margin: 50px 0;
+    line-height: 30px;
+  }
+  .navbar ul li a{
+    font-size: 20px;
+  }
+  a:hover,a.active{
+    background: none;
+    color: #0ef;
+  }
+  #check:checked ~ ul{
+    left: 0;
+  }
 }
 
 /* Hero section */
@@ -56,15 +107,21 @@ body {
   position: relative;
   width: 100%;
   height: 100vh;
-  background: url("./Untitled\ design.png")
-    no-repeat;
+  background: url("./Untitled\ design.png") no-repeat;
   background-size: cover;
   background-position: center;
-  display: flex;
+  /* display: flex;
   
   justify-content: space-between;
+  align-items: center; */
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   align-items: center;
+  gap: 1.5rem;
   padding: 70px 10% 0;
+  margin-top: auto;
+  padding-top: auto;
 }
 
 .home-content {
@@ -146,14 +203,16 @@ body {
     gap: 1.5rem;
 }
 .about-img img{
-    padding-bottom: 20%;
-    max-width: 630px;
+    padding-bottom: 6%;
+    max-width: 100vh;
     height: auto;
     width: 100%;
     border-radius: 8px;
 }
 .about-text h2{
-    font-size: 60px;
+  margin-top: 100px;
+  padding-top: 50px;
+  font-size: 60px;
 }
 .about-text h2 span{
     color: #0ef;
@@ -179,6 +238,7 @@ body {
     font-size: 20px;
     line-height: 1.4;
     margin-bottom: 4rem;
+    margin-top: 50px;
 }
 .sub-title{
     text-align: center;
@@ -478,14 +538,15 @@ section{
 /* Portfolio */
 
 .main-text{
-  padding-top: 130px;
-  margin-top: 200px;
+  padding-top: 100px;
+  margin-top: 50px;
 }
 
 .main-text h2{
   font-size: 60px;
   line-height: 1;
   text-align: center;
+  padding: 50px;
 }
 .main-text h2 span{
   color: #0ef;
@@ -542,6 +603,7 @@ section{
   color: #ededed;
   background: #001b29;
   text-align: center;
+  margin-top: 100px;
 }
 
 .contact-section h2 {
@@ -627,18 +689,6 @@ section{
 }
 
 
-/* Responsive Style */
 
-@media(max-width: 768px){
-  .navbar{
-    display: flex;
-    flex-direction: column;
-  }
-}
-@media(min-width: 480px){
-  .home{
-    display: grid;
-    grid-template-columns: repeat(auto-fit)
 
-  }
-}
+
