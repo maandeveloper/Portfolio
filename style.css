@@ -186,6 +186,13 @@ body {
     0 0 200px cyan;
 }
 
+@media screen and (max-width: 768px){
+  .home{
+    padding: 0px 20px;
+    margin-top: 28%;
+  }
+}
+
 
 
 
@@ -409,7 +416,7 @@ section{
 .heading1{
   text-align: center;
   text-decoration: underline;
-  text-underline-offset: 10px;
+  text-underline-offset: 3px;
   text-decoration-thickness: 5px;
   margin-bottom: 50px;
 }
